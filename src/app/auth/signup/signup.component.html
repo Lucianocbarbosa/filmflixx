@@ -1,4 +1,4 @@
-<form #singup="ngForm">
+<form #signup="ngForm" (ngSubmit)="onSubmit()">
   <p>
     <mat-form-field appearance="fill">
       <mat-label>Nome de usuário</mat-label>
@@ -75,7 +75,7 @@
     type="submit"
     mat-raised-button
     color="primary"
-    [disabled]="singup.invalid"
+    [disabled]="signup.invalid"
   >
     Cadastrar
   </button>
