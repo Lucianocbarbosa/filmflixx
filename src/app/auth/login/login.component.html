@@ -1,11 +1,11 @@
 <form #login="ngForm" (ngSubmit)="onSubmit()">
-  <h3 class="mat-h3">Bem -vindo(a)</h3>
+  <h3 class="mat-h3">Bem-vindo(a) de volta!</h3>
 
   <p>
     <mat-form-field appearance="fill">
       <mat-label>Email</mat-label>
       <input type="email" name="email" matInput ngModel required />
-      <mat-icon matPrefix>email</mat-icon>
+      <mat-icon matSuffix>email</mat-icon>
     </mat-form-field>
   </p>
 
@@ -13,7 +13,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Senha</mat-label>
       <input type="password" name="password" matInput ngModel required />
-      <mat-icon matPrefix>lock</mat-icon>
+      <mat-icon matSuffix>lock</mat-icon>
     </mat-form-field>
   </p>
 

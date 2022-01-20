@@ -7,10 +7,11 @@ import { AuthService } from 'src/app/core/services/auth/auth.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss']
+  styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnInit {
   @ViewChild('signup') signupForm!: NgForm;
+
   onSubmit() {
     const values = this.signupForm.value;
 
@@ -18,15 +19,18 @@ export class SignupComponent implements OnInit {
       email: values.email,
       username: values.username,
       birthdate: values.birthdate,
-      profile: '/assets/user-default.png'
-    }
+      profile: 'assets/user_default.png',
+    };
 
     this.authService.signup(values.email, values.password, user).subscribe({
       next: (creds) => { },
       error: (err) => {
-        this.snackBar.open(err.code, 'fechar', { duration: 5000, horizontalPosition: 'end' });
-      }
-    })
+        this.snackBar.open(err.code, 'Fechar', {
+          duration: 5000,
+          horizontalPosition: 'end',
+        });
+      },
+    });
   }
 
   constructor(
@@ -34,7 +38,5 @@ export class SignupComponent implements OnInit {
     private snackBar: MatSnackBar
   ) { }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void { }
 }

@@ -17,14 +17,13 @@ import { CoreModule } from './core/core.module';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
+    BrowserAnimationsModule,
     CoreModule,
-    AppRoutingModule,
-
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
